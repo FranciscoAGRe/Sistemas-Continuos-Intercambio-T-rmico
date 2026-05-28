@@ -1,0 +1,7 @@
+TemperaturaInterna1 = 80
+TemperaturaInterna2 = 20
+TemperaturaAmbiente = 25
+CoeficientePerdidaAmbiente1 = 0,05
+CoeficientePerdidaAmbiente2 = 0,1
+CoeficienteIntercambioTermico1 = 0,2
+CoeficienteIntercambioTermico2 = 0,2
