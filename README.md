@@ -1,16 +1,5 @@
 # Sistemas Continuos: Intercambio Térmico
 
-## Descripción del Proyecto
-
-Este software realiza la simulación numérica y el análisis del comportamiento de un **sistema de intercambio térmico acoplado entre dos cuerpos**. 
-
-El modelo en estudio está compuesto por dos objetos con capacidades térmicas individuales, inmersos en un ambiente con temperatura constante ($T_{amb}$). La dinámica de transferencia de calor implementada contempla dos fenómenos simultáneos:
-
-* **Transferencia con el entorno:** Cada cuerpo interactúa de forma independiente con el medio ambiente a través de sus respectivas fronteras.
-* **Transferencia mutua (acoplamiento):** Existe un flujo térmico bidireccional entre ambos objetos generado por su contacto directo, donde el calor se desplaza desde el cuerpo de mayor temperatura hacia el de menor temperatura.
-
-El objetivo principal de la simulación es resolver y evaluar la evolución temporal de las temperaturas de ambos cuerpos ($T_1$ y $T_2$) a partir de un conjunto de condiciones iniciales parametrizables, permitiendo estudiar visualmente la convergencia y el comportamiento del sistema.
-
 # Autores
 
     Andreani, Manuel Francisco
