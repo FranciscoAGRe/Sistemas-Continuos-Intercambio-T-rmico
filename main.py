@@ -46,3 +46,13 @@ if __name__ == "__main__":
     
     # Enviar los datos al script graficador
     exportar_y_graficar(tiempos_res, T1_res, T2_res, params['Tamb'], titulo="Euler")
+
+    tiempos_res, T1_res, T2_res = simulador.heun(
+        initial_T1=params['initial_T1'],
+        initial_T2=params['initial_T2'],
+        h=h,
+        max_simtime=max_simtime
+    )
+    
+    # Enviar los datos al script graficador
+    exportar_y_graficar(tiempos_res, T1_res, T2_res, params['Tamb'], titulo="Heun")
