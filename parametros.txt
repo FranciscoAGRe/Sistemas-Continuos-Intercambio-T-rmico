@@ -1,0 +1,9 @@
+max_simtime = 100.0
+h = 0.1
+Tamb = 25.0
+k1 = 0.05
+k2 = 0.1
+k12 = 0.2
+k21 = 0.2
+initial_T1 = 80.0
+initial_T2 = 20.0
