@@ -1,14 +1,12 @@
 from Ej8 import Ej8
+from graficador import exportar_y_graficar
 
 def read_params(filename="parametros.txt"):
-    """
-    Lee un archivo de texto y devuelve un diccionario con los parámetros.
-    """
     parametros = {}
     with open(filename, 'r') as f:
         for line in f:
             line = line.strip()
-            if not line or '=' not in line:  # Ignorar líneas vacías o mal formateadas
+            if not line or '=' not in line:
                 continue
             
             clave, valor = line.split('=')
@@ -23,14 +21,13 @@ def read_params(filename="parametros.txt"):
     return parametros
 
 if __name__ == "__main__":
-    # 1. Leer parámetros
+    # Leer parámetros
     params = read_params()
 
-    # 2. Extraer variables de simulación
     max_simtime = params['max_simtime']
     h = params['h']
     
-    # 3. Inicializar el simulador con los parámetros del modelo
+    # Inicializar el simulador
     simulador = Ej8(
         Tamb=params['Tamb'],
         k1=params['k1'],
@@ -39,14 +36,13 @@ if __name__ == "__main__":
         k21=params['k21']
     )
 
-    # 4. Ejecutar los métodos numéricos
-    print("Ejecutando simulación con método de Euler...")
-    simulador.euler(
+    
+    tiempos_res, T1_res, T2_res = simulador.euler(
         initial_T1=params['initial_T1'],
         initial_T2=params['initial_T2'],
         h=h,
         max_simtime=max_simtime
     )
     
-    # En el futuro, puedes agregar:
-    # simulador.rk4(params['initial_T1'], params['initial_T2'], h, max_simtime)
+    # Enviar los datos al script graficador
+    exportar_y_graficar(tiempos_res, T1_res, T2_res, params['Tamb'], titulo="Euler")
