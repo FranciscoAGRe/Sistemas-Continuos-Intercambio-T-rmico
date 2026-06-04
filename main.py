@@ -2,6 +2,14 @@ from Ej8 import Ej8
 from graficador import exportar_y_graficar
 
 def read_params(filename="parametros.txt"):
+    """
+    Pre: 
+        'filename' debe ser una cadena de texto (str) que indique la ruta a un archivo de texto accesible.
+        Las líneas del archivo deben seguir el formato 'clave=valor' con valores que puedan ser convertidos a float.
+    Post: 
+        Devuelve un diccionario (dict) donde las claves son cadenas de texto y
+        los valores son números de punto flotante (float) leídos del archivo.
+    """
     parametros = {}
     with open(filename, 'r') as f:
         for line in f:
@@ -16,7 +24,7 @@ def read_params(filename="parametros.txt"):
             try:
                 parametros[clave] = float(valor)
             except ValueError:
-                print(f"Advertencia: No se pudo convertir '{valor}' a número.")
+                print(f"No se pudo convertir '{valor}' a número.")
                 
     return parametros
 

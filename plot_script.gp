@@ -1,5 +1,5 @@
 
-    set title 'Evolucion Termica de Dos Cuerpos (Euler)' font ',14'
+    set title 'Evolucion Termica de Dos Cuerpos (Heun)' font ',14'
     set xlabel 'Tiempo (h)' font ',12'
     set ylabel 'Temperatura (C)' font ',12'
     
@@ -14,7 +14,7 @@
     
     set offsets graph 0, 0, 0.05, 0.05
     
-    Tamb = 20.0
+    Tamb = 25.0
     
     plot 'datos_simulacion.dat' using 1:2 with lines ls 1 title 'T1(t) - Cuerpo 1', \
          'datos_simulacion.dat' using 1:3 with lines ls 2 title 'T2(t) - Cuerpo 2', \

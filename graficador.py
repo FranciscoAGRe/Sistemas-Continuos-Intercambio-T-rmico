@@ -2,7 +2,14 @@ import subprocess
 
 def exportar_y_graficar(tiempos, T1, T2, Tamb, titulo):
     """
-    Guarda los datos generados por la simulación y lanza Gnuplot.
+    Pre: 
+        'tiempos', 'T1' y 'T2' deben ser iterables (como listas o arreglos de numpy)
+        de la misma longitud y contener valores numéricos. 'Tamb' debe ser un valor numérico y 
+        'titulo' una cadena de texto (str).
+    Post: 
+        Crea o sobrescribe los archivos 'datos_simulacion.dat' y 'plot_script.gp' 
+        en el directorio de trabajo actual y abre una ventana de Gnuplot con la gráfica correspondiente 
+        (o informa por consola si Gnuplot no está disponible).
     """
 
     data_filename = 'datos_simulacion.dat'
